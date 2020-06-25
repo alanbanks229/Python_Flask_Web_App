@@ -14,7 +14,7 @@ The launch page will display math trivia, fetched from Numbers API which is free
 To render new Trivia you have to refresh the page, hopefully down the line I'll find a way to make it
 fetch and not reset the server
 
-The '/other' page displays clickable anchor tags (made to look like <div> tags) and will redirect a user to
+The '/other' page displays clickable anchor tags (made to look like 'div' tags) and will redirect a user to
 some of my favorite pages on the internet! As of now there are only 3 links, but they will render in a random order
 so you won't know what card leads to what until you click on it :)
 
