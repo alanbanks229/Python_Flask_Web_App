@@ -32,7 +32,7 @@ body {
    * Centering the body content
    */
   .container {
-    width: 80%;
+    width: 90%;
     margin: 0 auto;
   }
 
@@ -140,8 +140,8 @@ body {
       padding: 20px;
     } to {
       background-color: #00a2ffc4;
-      font-size: 126px;
-      padding: 36px;
+      font-size: 120px;
+      padding: 30px;
       box-shadow: 0 0 20px #fff, 0 0 20px rgb(255, 171, 171) 0 30px #706ef3, 0 0 40px #eeff00, 0 0 50px #61bde7, 0 0 60px #ebdab4, 0 0 70px #dfc087;
     }
   }
@@ -149,8 +149,8 @@ body {
   @keyframes mystery_link_contract {
     from {
       background-color: #00a2ffc4;
-      font-size: 126px;
-      padding: 36px;
+      font-size: 120px;
+      padding: 30px;
       box-shadow: 0 0 20px #fff, 0 0 20px rgb(255, 171, 171) 0 30px #706ef3, 0 0 40px #eeff00, 0 0 50px #61bde7, 0 0 60px #ebdab4, 0 0 70px #dfc087;
     } to {
       background-color: white;
@@ -162,7 +162,7 @@ body {
 
   .trivia_container{
     margin: auto;
-    width: 80%;
+    width: 85%;
     text-align: center;
     border-radius: 10px;
     background-color: rgba(255,223,69,1);
@@ -193,9 +193,7 @@ body {
   }
 
   .trivia_header{
-    -webkit-animation: glow 0.5s ease-in-out infinite alternate;
-    -moz-animation: glow 0.5s ease-in-out infinite alternate;
-    animation: glow 0.5s ease-in-out infinite alternate;
+    animation: reveal 3000ms ease-in-out forwards 400ms, glow 2500ms linear infinite 500ms;
   }
 
 
@@ -210,11 +208,16 @@ body {
     }
 }
 
-@keyframes glow {
-  from {
-    text-shadow: 0 0 30px #fff, 0 0 20px #fff, 0 0 30px #fdfdfd, 0 0 40px #eeff00, 0 0 50px #ffcf4a, 0 0 60px #e9c673, 0 0 70px #dfc087;
+@keyframes reveal {
+  80%{
+    letter-spacing: 4px;
   }
-  to {
-    text-shadow: 0 0 20px #fff, 0 0 20px rgb(255, 171, 171) 0 30px #706ef3, 0 0 40px #eeff00, 0 0 50px #61bde7, 0 0 60px #ebdab4, 0 0 70px #dfc087;
+  100% {
+    background-size: 300% 300%;
+  }
+}
+@keyframes glow {
+  40% {
+    text-shadow: 0 0 30px #fff;
   }
 }
