@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alan Banks Lab6</title>
+</head>
+<body>
+    {% extends "header-nav.html" %}
+    {% block content %}
+    <div class="home">
+        <h1>Today's Date : {{ DATE }} || {{ current_minute }} EST </h1>
+        <p>This website was built with Python via the Flask framework.</p>
+        <p style="color:red">EST time is determined at page load. In order to update it, you need to refresh this page.</p>
+        <div class="trivia_container">
+            <h2>Random Math Trivia</h2>
+            <p style="color:red">* * * You can click the home tab in the top right navbar to render more trivia * * *</p>
+            <ol>
+            {% for fact in randomfacts %} 
+                <li><b>{{ fact }}</b></li>
+            {% endfor %}
+            </ol>
+        </div>
+    </div>
+    {% endblock %}
+</body>
+</html>

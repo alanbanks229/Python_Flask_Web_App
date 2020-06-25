@@ -1,0 +1,200 @@
+body {
+    margin: 0;
+    padding: 0;
+    color: #444;
+  }
+  /*
+   * Formatting the header area
+   */
+  header {
+    margin: auto;
+    background: linear-gradient(
+      180deg,
+    rgba(255,223,69,1) 0%,
+    rgba(255, 255, 255, 0.725) 100%);
+    height: 35px;
+    width: 80%;
+    opacity: .9;
+    margin-bottom: 10px;
+  }
+  header h1.logo {
+    margin: 0;
+    font-size: 1.7em;
+    color:blue;
+    text-transform: uppercase;
+    float: left;
+  }
+  header h1.logo:hover {
+    color: white;
+    text-decoration: none;
+  }
+  /*
+   * Centering the body content
+   */
+  .container {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  div.other {
+    text-align: center;
+    padding: 10px 0 30px 0;
+    background-color: #E6E6FA;
+    -webkit-border-radius: 6px;
+       -moz-border-radius: 6px;
+            border-radius: 6px;
+    box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
+  }
+
+  div.home {
+    padding: 10px 0 30px 0;
+    background-color: #E6E6FA;
+    -webkit-border-radius: 6px;
+       -moz-border-radius: 6px;
+            border-radius: 6px;
+    box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
+  }
+
+  div.home h1{
+    margin-left: 10%;
+  }
+
+  div.home p{
+    margin-left: 10%;
+  }
+  div.about {
+    padding: 10px 0 30px 0;
+    background-color: #E6E6FA;
+    -webkit-border-radius: 6px;
+       -moz-border-radius: 6px;
+            border-radius: 6px;
+  }
+  h2 {
+    font-size: 3em;
+    margin-top: 40px;
+    text-align: center;
+    letter-spacing: -2px;
+  }
+  h3 {
+    font-size: 2.4em;
+    font-weight: 100;
+    margin-top: 30px;
+    text-align: center;
+    letter-spacing: -1px;
+  }
+  .menu {
+    float: right;
+    margin-top: 8px;
+  }
+  .menu li {
+    display: inline;
+  }
+  .menu li + li {
+    margin-left: 35px;
+  }
+  .menu li a {
+    background-color: antiquewhite;
+    padding: 10px;
+    color: #444;
+    text-decoration: none;
+  }
+  .menu li a:hover{
+    border: blue solid 2px;
+    color: white;
+  }
+
+  div.other .trivia_container .inline_links_list{
+    display: inline-flex;
+    /* padding-top: 10px;
+    background-color: rgb(253, 244, 227)!important; */
+    border-radius: 10px;
+    list-style-type: none;
+  }
+
+  div.other .trivia_container .inline_links_list li a{
+    display: block;
+    margin-right: 30px;
+    background-color: white;
+    text-decoration: none;
+    animation-duration: 1s;
+    font-size: 100px;
+    padding: 20px;
+    animation-name: mystery_link_contract;
+    animation-fill-mode: both;
+    border: black solid 3px;
+  }
+  div.other .trivia_container .inline_links_list li a:hover{
+    animation-duration: 1s;
+    animation-name: mystery_link_expand;
+    animation-fill-mode: both;
+  }
+
+  @keyframes mystery_link_expand {
+    from {
+      background-color: white;
+      font-size: 100px;
+      padding: 20px;
+    } to {
+      background-color: #00a2ffc4;
+      font-size: 126px;
+      padding: 36px;
+    }
+  }
+
+  @keyframes mystery_link_contract {
+    from {
+      background-color: #00a2ffc4;
+      font-size: 126px;
+      padding: 36px;
+    } to {
+      background-color: white;
+      font-size: 100px;
+      padding: 20px;
+    }
+  }
+
+  .trivia_container{
+    margin: auto;
+    width: 80%;
+    text-align: center;
+    border-radius: 10px;
+    background-color: rgba(255,223,69,1);
+    box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
+		0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 10px 10px rgba(0, 0, 0, 0.12);
+  }
+
+  .trivia_container p {
+    margin: 0 auto!important;
+  }
+
+  .trivia_container h2{
+    padding-top:10px;
+    margin-bottom: 15px!important;
+  }
+
+  .trivia_container ol{
+    padding-top: 10px;
+    background-color: rgb(253, 244, 227)!important;
+    border-radius: 10px;
+  }
+
+  .trivia_container ol li{
+    padding-bottom: 10px;
+    animation-name: load_facts;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+  }
+
+
+
+  @keyframes load_facts {
+    from {
+        opacity: 0%;
+        color: red;
+    } to {
+        opacity: 100%;
+
+    }
+}

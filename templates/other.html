@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% extends "header-nav.html" %}
+    {% block content %}
+    <div class="other">
+      <h3>Welcome to the mystery page</h3>
+      <p>These Cards Will Take You To External Links</p>
+      <div class="trivia_container">
+        <h2>Random Links :)</h2>
+        <p class="link_descriptions"><b>I promise there are no sketchy sites lol</b><br/>
+          <br/>One card leads to <b>Google</b>
+          <br/>Another Card leads to <b>Kurzgesagt</b>, one of my favorite youtube channels
+          <br/>The last card is what I like to call ... a great <b><i>Meme</i></b>
+          <br/>
+          <br/>Every Render of this page will randomize the order of these cards
+        </p>
+        <br>
+        <ul class="inline_links_list">
+        {% for link in cool_links %} 
+            <li>
+                <a href="{{ link }}" target="_blank" rel="noopener noreferrer">
+                  ? ? ?
+                </a>
+            </li>
+        {% endfor %}
+        </ul>
+    </div>
+     {% endblock %}
+    </div>
+</body>
+</html>
