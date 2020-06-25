@@ -115,7 +115,7 @@ body {
 
   div.other .trivia_container .inline_links_list li a{
     display: block;
-    margin-right: 30px;
+    margin-right: 40px;
     background-color: white;
     text-decoration: none;
     animation-duration: 1s;
@@ -124,6 +124,7 @@ body {
     animation-name: mystery_link_contract;
     animation-fill-mode: both;
     border: black solid 3px;
+    box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
   }
   div.other .trivia_container .inline_links_list li a:hover{
     animation-duration: 1s;
@@ -133,6 +134,7 @@ body {
 
   @keyframes mystery_link_expand {
     from {
+      box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
       background-color: white;
       font-size: 100px;
       padding: 20px;
@@ -140,6 +142,7 @@ body {
       background-color: #00a2ffc4;
       font-size: 126px;
       padding: 36px;
+      box-shadow: 0 0 20px #fff, 0 0 20px rgb(255, 171, 171) 0 30px #706ef3, 0 0 40px #eeff00, 0 0 50px #61bde7, 0 0 60px #ebdab4, 0 0 70px #dfc087;
     }
   }
 
@@ -148,10 +151,12 @@ body {
       background-color: #00a2ffc4;
       font-size: 126px;
       padding: 36px;
+      box-shadow: 0 0 20px #fff, 0 0 20px rgb(255, 171, 171) 0 30px #706ef3, 0 0 40px #eeff00, 0 0 50px #61bde7, 0 0 60px #ebdab4, 0 0 70px #dfc087;
     } to {
       background-color: white;
       font-size: 100px;
       padding: 20px;
+      box-shadow: 0 0 30px #fff, 0 0 20px #fff, 0 0 30px #fdfdfd, 0 0 40px #eeff00, 0 0 50px #ffcf4a, 0 0 60px #e9c673, 0 0 70px #dfc087;
     }
   }
 
@@ -187,6 +192,12 @@ body {
     animation-fill-mode: forwards;
   }
 
+  .trivia_header{
+    -webkit-animation: glow 0.5s ease-in-out infinite alternate;
+    -moz-animation: glow 0.5s ease-in-out infinite alternate;
+    animation: glow 0.5s ease-in-out infinite alternate;
+  }
+
 
 
   @keyframes load_facts {
@@ -197,4 +208,13 @@ body {
         opacity: 100%;
 
     }
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 30px #fff, 0 0 20px #fff, 0 0 30px #fdfdfd, 0 0 40px #eeff00, 0 0 50px #ffcf4a, 0 0 60px #e9c673, 0 0 70px #dfc087;
+  }
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 20px rgb(255, 171, 171) 0 30px #706ef3, 0 0 40px #eeff00, 0 0 50px #61bde7, 0 0 60px #ebdab4, 0 0 70px #dfc087;
+  }
 }

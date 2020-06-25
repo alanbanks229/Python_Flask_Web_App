@@ -6,22 +6,42 @@
     <title>Alan Banks Lab6</title>
 </head>
 <body>
-    {% extends "header-nav.html" %}
+
+    <!--
+    Below we are actually rendering header-nav.html, along with
+    home.html
+     -->
+     {% extends "header-nav.html" %}
+
+
+    <!-- 
+        The { {var_name} } represent code passed in from the python file
+        
+        For Example: inside the home() method in our python file we assigned
+        {DATE} = today.strftime("%B %d, %Y"),
+
+        This allows the usage of python libraries/code to render information dynamically
+        whether it be the Date and Time, or additional data.
+    -->
     {% block content %}
-    <div class="home">
-        <h1>Today's Date : {{ DATE }} || {{ current_minute }} EST </h1>
-        <p>This website was built with Python via the Flask framework.</p>
-        <p style="color:red">EST time is determined at page load. In order to update it, you need to refresh this page.</p>
-        <div class="trivia_container">
-            <h2>Random Math Trivia</h2>
-            <p style="color:red">* * * You can click the home tab in the top right navbar to render more trivia * * *</p>
-            <ol>
-            {% for fact in randomfacts %} 
-                <li><b>{{ fact }}</b></li>
-            {% endfor %}
-            </ol>
+        <div class="home">
+            <h1>Today's Date : {{ DATE }} || {{ current_minute }} EST </h1>
+            <p>A website built with Python and the 
+                <a target="_blank" rel="noopener noreferrer" href="https://flask.palletsprojects.com/en/1.1.x/#">Flask</a>
+                framework.
+            </p>
+            <p><b>Note:</b> current time is in 24 hour format</p>
+            <p style="color:red">EST time is determined at page load. In order to update it, you need to refresh this page.</p>
+            <div class="trivia_container">
+                <h2 class="trivia_header">Random Math Trivia</h2>
+                <p style="color:red">* * * You can click the home tab in the top right navbar to render more trivia * * *</p>
+                <ol>
+                {% for fact in randomfacts %} 
+                    <li><b>{{ fact }}</b></li>
+                {% endfor %}
+                </ol>
+            </div>
         </div>
-    </div>
     {% endblock %}
 </body>
 </html>

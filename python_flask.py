@@ -32,17 +32,26 @@ def home():
     it will return home.html along with a
     parent html file "layout.html"
     """
+    #today will serve as our basis to achieve the textual day format
     today = date.today()
+
+    #below serves as a way for program to receive EST time
     est = pytz.timezone('America/New_York')
     datetime_est = datetime.now(est)
-    #Below is URL where I make a GET request
+
+    #Below is the URL where I'll make fetch calls (GET requests)
     url = "http://numbersapi.com/random/math"
+
+    #list_of_facts will contain trivia facts from url
     list_of_facts = []
+
+    #adding 3 random facts to our Array, 'list_of_facts'
     for counter in range(1, 4):
         print(counter)
         fetch = urllib.request.urlopen(url)
         list_of_facts.append(fetch.read().decode('utf-8'))
 
+    #passing in 3 variables which will be used in 'home.html'
     return (
         render_template(
             'home.html',
@@ -52,19 +61,21 @@ def home():
         )
     )
 
-
+#declaring our second route in this program
 @app.route('/other/')
 def other():
     """
     This method is responsible for rendering our other.html page
-    it will return an array of href= values for our anchor tags
-    within the other.html template file
+    It will return an array of values we will use for our anchor tags
+    specifically for the  <a href= /> values.
     """
     list_of_links = [
         "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
         "https://www.youtube.com/c/inanutshell/videos",
         "https://www.google.com/"
     ]
+    # shuffling the links to contribute to the "mystery/guessing"
+    # on the other.html page
     random.shuffle(list_of_links)
     return render_template('other.html', cool_links=list_of_links)
 
