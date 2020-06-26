@@ -25,23 +25,33 @@
     -->
     {% block content %}
         <div class="home">
+
+            <!-- Date and Time on the Webpage -->
             <h1>Today's Date : {{ DATE }} || {{ current_minute }} EST </h1>
+
             <p>A website built with Python and the 
                 <a target="_blank" rel="noopener noreferrer" href="https://flask.palletsprojects.com/en/1.1.x/#">Flask</a>
                 framework.
             </p>
             <p><b>Note:</b> current time is in 24 hour format</p>
             <p style="color:red">EST time is determined at page load. In order to update it, you need to refresh this page.</p>
+
             <div class="trivia_container">
                 <h2 class="trivia_header">Random Math Trivia</h2>
                 <p style="color:red">* * * You can click the home tab in the top right navbar to render more trivia * * *</p>
+                <!-- 
+                    Below is an ordered list which contains an inline-block for rendering the
+                    3 random facts coming from the home() method in our python_flask.py file
+                -->
                 <ol>
                 {% for fact in randomfacts %} 
                     <li><b>{{ fact }}</b></li>
                 {% endfor %}
                 </ol>
             </div>
-        </div>
+
+        </div> 
+        <!-- end of div class "home" -->
     {% endblock %}
 </body>
 </html>
