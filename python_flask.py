@@ -4,23 +4,24 @@ python_flask.py
 SDEV_300, lab6
 Alan Banks
 
-to get css to update on refresh you have to input
-command + shift + r
-(this will reset browser cache, and update css file in browser.)
-
 In this application I play around with fetch calls to NUMBERS API,
 which will create the ordered list of prompts a user will see on the
 homepage.
+
 The other navigation link, will be a page that will show CSS anchor cards
 that are somewhat dynamic.
+
+
+# Update Jun 27: Found another way to update HH:MM:SS without page refresh
+# Now using Javascript to render HH:MM:SS format. Because of this there is
+# no need to pass datetime_est to home.html, line 62
 
 """
 
 
-from datetime import date, datetime
+from datetime import date
 import random
 import urllib.request
-import pytz
 from flask import Flask, render_template
 
 app = Flask(__name__)
@@ -36,8 +37,8 @@ def home():
     today = date.today()
 
     #below serves as a way for program to receive EST time
-    est = pytz.timezone('America/New_York')
-    datetime_est = datetime.now(est)
+    # est = pytz.timezone('America/New_York')
+    # datetime_est = datetime.now(est)
 
     #Below is the URL where I'll make fetch calls (GET requests)
     url = "http://numbersapi.com/random/math"
@@ -51,13 +52,13 @@ def home():
         fetch = urllib.request.urlopen(url)
         list_of_facts.append(fetch.read().decode('utf-8'))
 
-    #passing in 3 variables which will be used in 'home.html'
+    #passing in 2 variables which will be used in 'home.html'
     return (
         render_template(
             'home.html',
             randomfacts=list_of_facts,
             DATE=today.strftime("%B %d, %Y"),
-            current_minute=datetime_est.strftime("%H:%M")
+            # current_minute=datetime_est.strftime("%H:%M")
         )
     )
 
